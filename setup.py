@@ -5,7 +5,7 @@ with open(file='README.md', mode='r', encoding='utf-8') as file:
 
 __version__ = '0.0.1'
 
-REPO_NAME = 'Movie-recommender-system'
+REPO_NAME = 'MovieRecommenderSystem'
 AUTHOR_USER_NAME = 'GyanPrakashkushwaha'
 SRC_REPO = 'recommender'
 AUTHOR_EMAIL = 'gyanp7880@gmail.com'
