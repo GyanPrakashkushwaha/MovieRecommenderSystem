@@ -33,13 +33,20 @@ st.title('Movie Recommender System')
 movies_title = df['title'].values
 selected_movie = st.selectbox(label='Select Movie title', options=movies_title)
 
+def click(clicked):
+    if click:
+        st.write('hello')
+    else:
+        st.write('byy')
+
 if st.button('Recommend'):
     names, posters = recommend(selected_movie)
 
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
-        st.text(names[0])
+        st.button((names[0]),on_click=click('button'))
+
         st.image(posters[0])
     with col2:
         st.text(names[1])
@@ -72,7 +79,6 @@ if st.button('Recommend'):
         st.text(names[9])
         st.image(posters[9])
 
-print(df)
 
 
 
