@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import requests
-from recommender.designs.remove_ import remove
+from recommender.designs.others.remove_ import remove
 
 
 
