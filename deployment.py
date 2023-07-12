@@ -1,6 +1,13 @@
 import streamlit as st
 import pickle
 import requests
+from recommender.remove_ import remove
+
+
+
+st.set_page_config(page_title="Movie Recommender System", page_icon=":🎥:", layout="wide", initial_sidebar_state="expanded")
+
+remove()
 
 df = pickle.load(file=open('model\df.pkl', mode='rb'))
 similarity = pickle.load(file=open('model\similarity.pkl', mode='rb'))
@@ -33,11 +40,6 @@ st.title('Movie Recommender System')
 movies_title = df['title'].values
 selected_movie = st.selectbox(label='Select Movie title', options=movies_title)
 
-def click(clicked):
-    if click:
-        st.write('hello')
-    else:
-        st.write('byy')
 
 if st.button('Recommend'):
     names, posters = recommend(selected_movie)
@@ -45,8 +47,7 @@ if st.button('Recommend'):
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
-        st.button((names[0]),on_click=click('button'))
-
+        st.text((names[0]))
         st.image(posters[0])
     with col2:
         st.text(names[1])
